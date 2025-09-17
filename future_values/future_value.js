@@ -29,11 +29,12 @@ for (let i = 1; i <= years; i++ ) {
 }
 
 // display results
+document.write('<p> <b>Future Value with Yearly Interest</b><p>');
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
 document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
-
+document.write('<p><b>Future Value with Monthly Interest</b><p>');
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
