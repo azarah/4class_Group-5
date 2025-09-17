@@ -22,10 +22,20 @@ do {
 }
 while ( isNaN(years) );
 
-// calulate future value
-let futureValue = investment;
+
+// calculate future value with YEARLY compounding
+let futureValueYearly = investment;
 for (let i = 1; i <= years; i++ ) {
-    futureValue += futureValue * rate / 100;
+    futureValueYearly += futureValueYearly * rate / 100;
+}
+
+//--Added for loop for monthly equation---------------------------------------------
+//calculate future value with monthly compounding
+let futureValueMonthly = investment;
+let months = years * 12;
+let monthlyRate = rate / 100 /12;
+for (let m = 1; m <= months; m++) {
+    futureValueMonthly += futureValueMonthly * monthlyRate;
 }
 
 // display results
@@ -33,9 +43,12 @@ document.write('<p> <b>Future Value with Yearly Interest</b><p>');
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
-document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
-document.write('<p><b>Future Value with Monthly Interest</b><p>');
+document.write(`<p><label>Future Value:</label> ${futureValueYearly.toFixed(2)}</p>`);
+
+//-----Add monthly results-----------------------------------------------------------
+// display monthly results
+document.write('<p><b>Future Value with Monthly Interest</b></p>');
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
-document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
+document.write(`<p><label>Future Value:</label> ${futureValueMonthly.toFixed(2)}</p>`);
