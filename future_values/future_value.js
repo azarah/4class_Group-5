@@ -33,3 +33,8 @@ document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
 document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
+
+document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
+document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
+document.write(`<p><label>Years:</label> ${years}</p>`);
+document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
