@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         // submit the form if error message is an empty string
-        //Comparison should be done with === instead of ==        if (errorMessage === "") {
+        //Comparison should be done with === instead of ==        
+        if (errorMessage == "") {
             $("#email_form").submit();
         } else {
             alert(errorMessage);            
