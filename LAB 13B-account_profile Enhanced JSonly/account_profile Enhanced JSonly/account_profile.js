@@ -27,12 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneField = document.getElementById("phone");
     const zipField = document.getElementById("zip");
     const dobField = document.getElementById("dob");
+    const cardField = document.getElementById("card"); // CHANGES MADE 11/4:: Validates the credit card field
     const saveBtn = document.getElementById("save");
 
     const emailPattern = /^[\w.\-]+@[\w.\-]+\.[a-zA-Z]+$/;
     const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
     const zipPattern = /^\d{5}(-\d{4})?$/;
     const datePattern = /^[01]?\d\/[0-3]\d\/\d{4}$/;
+     const cardPattern = /^\d{4}-\d{4}-\d{4}-\d{4}$/; //CHANGES MADE 11/4:: A line of code that defines a regular expression pattern for a credit card number
 
     saveBtn.addEventListener("click", () => {
         // Clear all spans
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = phoneField.value;
         const zip = zipField.value;
         const dob = dobField.value;
+        const card = cardField.value; // CHANGS MADE 11/4 :: A line of code that gets the value entered for the credit card. 
 
         let isValid = true;
 
@@ -60,3 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
             getNextSpan(zipField).textContent = "Please enter a valid zip code.";
         }
+    //CHANGS MADE 11/4 :: An if statement that checks whether the user entered something for the credit card. If there’s an entry,it uses the regular expression to make sure the credit card number is in the correct format
+        if (card === "" || !cardPattern.test(card)) {
+            isValid = false;
+            getNextSpan(cardField).textContent = "Please enter a credit card number in NNNN-NNNN-NNNN-NNNN format.";
+        }
+    });
+});
