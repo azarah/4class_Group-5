@@ -40,7 +40,7 @@ const calculateFutureValue = (investment, rate, years) => {
     }
 //CHANGES MADE :: LAB 12-1.6  Alert statement that shows maximum JavaScript number and commented out for 12-1.8
 
-  //alert("Maximum JavaScript number = " + Number.MAX_VALUE); 
+alert("Maximum JavaScript number = " + Number.MAX_VALUE); 
     
     return futureValue.toFixed(2);
 };
@@ -55,19 +55,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const futureValueInput = $("#future_value");
 
 //CHANGES MADE :: LAB 12-1.7 Comment out user input to use random values instead
-       // const investment = parseFloat(investmentInput.value);  
-       // const rate = parseFloat(rateInput.value); 
-       // const years = parseFloat(yearsInput.value);  
+      const investment = parseFloat(investmentInput.value);  
+     const rate = parseFloat(rateInput.value); 
+     const years = parseFloat(yearsInput.value);  
 
 //CHANGES MADE :: LAB 12-1.7 Generate random values using getRandomNumber() function >> investment, rate, years variables assigned random max values
-     const investment = getRandomNumber(50000); 
-     const rate = getRandomNumber(15); 
-     const years = getRandomNumber(50); 
+    //const investment = getRandomNumber(50000); 
+    // const rate = getRandomNumber(15); 
+    // const years = getRandomNumber(50); 
 
 //CHANGES MADE :: LAB 12-1.7  Displays random values in the text boxes
-        investmentInput.value = investment;
-        rateInput.value = rate;
-        yearsInput.value = years;
+     // investmentInput.value = investment;
+      // rateInput.value = rate;
+      // yearsInput.value = years;
 
         let isValid = true;
 

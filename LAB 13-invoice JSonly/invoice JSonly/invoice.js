@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const percentInput = document.getElementById("percent");
     const discountInput = document.getElementById("discount");
     const totalInput = document.getElementById("total");
+    const invoiceDateInput = document.getElementById("invoice_date"); //CHANGES MADE 11/11:: Gets a reference to the html invoice date input field.
+
 
     calculateBtn.addEventListener("click", () => {
         const customerType = typeSelect.value;
@@ -48,6 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
         percentInput.value = (discountPercent * 100).toFixed(2);
         discountInput.value = discountAmount.toFixed(2);
         totalInput.value = invoiceTotal.toFixed(2);
+//-----------------------------------------
+        // CHANGES MADE 11/11::Added code to set default invoice date
+        const currentDate = new Date();
+        const formattedDate = getFormattedDate(currentDate);
+        
+        //CHANGES MADE 11/11:: Sets the current date if it's empty after calculate button is clicked
+        if (!invoiceDateInput.value.trim()) {
+            invoiceDateInput.value = formattedDate;
+        }
+//-----------------------------------------
 
         // set focus on type drop-down when done
         typeSelect.focus();
