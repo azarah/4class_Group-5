@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Account Profile</title>
+    <link rel="stylesheet" type="text/css" href="account_profile.css">
+</head>
+
+<body>
+    <main class="profile">
+        <h1>My Account Profile</h1>
+        <p>Thank you for updating your profile! Please review the information below to make sure it is correct.</p>
+        <p id="profile">&nbsp;</p>
+
+        <input type="button" id="back" value="Back">
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // ADDED: grab the query string from the URL e.g. "?email=...&phone=..."
+            const queryString = window.location.search;
+            const profile = document.getElementById("profile");
+     
+            if (queryString) {
+                // ADDED: Remove leading "?" so only the data shows
+                const cleaned = queryString.substring(1);   
+                // ADDED: Decode encoded characters so text displays normally
+                profile.textContent = decodeURIComponent(cleaned);
+            }
+     
+            // Back Button
+            document.getElementById("back").addEventListener("click", () => {
+                history.back();
+            });
+        });
+     </script>
+</body>
+</html>
