@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
         totalInput.value = invoiceTotal.toFixed(2);
 //-----------------------------------------
         // CHANGES MADE 11/11::Added code to set default invoice date
-        const currentDate = new Date();
-        const formattedDate = getFormattedDate(currentDate);
-        
+        const currentDate = new Date(); //Date is a global object in Js.
+        const formattedDate = getFormattedDate(currentDate); // read line 22 for beginning of getFormattedDate format add with line 55   
+
         //CHANGES MADE 11/11:: Sets the current date if it's empty after calculate button is clicked
         if (!invoiceDateInput.value.trim()) {
             invoiceDateInput.value = formattedDate;
